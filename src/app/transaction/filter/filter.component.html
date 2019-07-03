@@ -1,0 +1,70 @@
+<div class="filter">
+    <h1 class="filter__heading">Filter Result</h1>
+    <form
+        action
+        class="form"
+    >
+        <div>
+            <label for="provider">Provider</label>
+            <div class="form__group">
+                <select
+                    name="provider"
+                    class="select"
+                >
+                    <option value="provider">provider</option>
+                    <option value="provider">provider</option>
+                    <option value="provider">provider</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="district">District</label>
+            <div class="form__group">
+                <select
+                    class="select"
+                    name="district"
+                >
+                    <option value="district">district</option>
+                    <option value="district">district</option>
+                    <option value="district">district</option>
+                </select>
+            </div>
+        </div>
+        <div>
+            <label for="accountType">Account Type</label>
+            <div class="form__group">
+                <select
+                    name="accountType"
+                    id="accountType"
+                    class="select"
+                >
+                    <option value="accountType">Account Type</option>
+                    <option value="accountType">Account Type</option>
+                    <option value="accountType">Account Type</option>
+                </select>
+            </div>
+        </div>
+
+        <div>
+            <label for="startDate">Start Date</label>
+            <div class="form__group--input">
+                <input
+                    type="text"
+                    name="startDate"
+                >
+            </div>
+        </div>
+
+        <div>
+            <label for="endDate">End Date</label>
+            <div class="form__group--input">
+                <input
+                    type="text"
+                    name="endDate"
+                >
+            </div>
+        </div>
+        <button class="button">Filter<fa-icon [icon]="filterIcon" style="margin-left: 5px;"></fa-icon></button>
+        <!-- <p>sdsdsdsdsd</p> -->
+    </form>
+</div>

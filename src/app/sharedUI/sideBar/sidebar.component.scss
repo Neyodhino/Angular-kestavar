@@ -1,0 +1,41 @@
+@import '../../../styles/abstracts/variables';
+
+.sidebar{
+  height: 100vh;
+  width: 300px;
+  background-color: $white;
+  box-shadow: 3px 0 7px -4px #ccc;
+  width: 300px;
+
+  &__content{
+    width: 80%;
+    margin: 0 auto;
+    padding-top: 40px;
+
+    nav{
+      margin-top: 70px;
+
+      ul li{
+        list-style: none;
+      }
+      ul li a{
+        text-decoration: none;
+        font-size: 1.6rem;
+        font-weight: bold;
+        color: $darkGray;
+      }
+
+      ul li:not(:last-child){
+        margin-bottom: 30px;
+      }
+    }
+  }
+  
+  &__heading{
+    font-size: 1.9rem;
+  }
+  fa-icon{
+    margin-right: 20px;
+    font-size: 1.9rem;
+  }
+}

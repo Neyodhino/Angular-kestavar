@@ -1,0 +1,17 @@
+@import '../abstracts/variables';
+.button{
+    padding: 10px 30px;
+    font-family: inherit;
+    border: none;
+    outline: none;
+    font-size: 2rem;
+    font-weight: bold;
+    color: $white;
+    border-radius: 4px;
+    background-image: linear-gradient(to right, $mainColor, $secondaryColor);
+    cursor: pointer;
+    transition:all .4s;
+    &:hover{
+        box-shadow: 0 2rem 3rem rgba($color: #000000, $alpha: .1);
+    }
+}

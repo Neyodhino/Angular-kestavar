@@ -1,0 +1,74 @@
+<div class="transaction">
+    <div class="transaction__content--header">
+        <h1 class="transaction__heading">Transaction Summary</h1>
+        <button (click)="exportAsExcel()">export <fa-icon [icon]="excelIcon"></fa-icon></button>
+    </div>
+    <div class="transaction__content">
+        <ul class="responsive-table">
+            <li class="table-header">
+                <div class="col col-1">S/N</div>
+                <div class="col col-2">Refrence</div>
+                <div class="col col-3">Account No</div>
+                <div class="col col-4">Customer Name</div>
+                <div class="col col-5">Customer Address</div>
+                <div class="col col-6">Customer Type</div>
+                <div class="col col-7">Amount</div>
+                <div class="col col-8">Comm. Amount</div>
+                <div class="col col-9">Net Amount</div>
+                <div class="col col-10">District</div>
+                <div class="col col-11">Channel</div>
+                <div class="col col-12">Date</div>
+                <div class="col col-13">Kilowatts</div>
+                <div class="col col-14">Vat</div>
+                <div class="col col-15">EMS RECEIPT/TOKEN</div> 
+            </li>
+            <li class="table-row" *ngFor="let transaction of transactions">
+                <div class="col col-1" data-label="s/n">
+                    {{transaction.id}}
+                </div>
+                <div class="col col-2" data-label="refernce">
+                    {{transaction.reference}}
+                </div>
+                <div class="col col-3" data-label="accountNo">
+                    {{transaction.accountNumber}}
+                </div>
+                <div class="col col-4" data-label="customerName">
+                    {{transaction.customerName}}
+                </div>
+                <div class="col col-5" data-label="customerAddress">
+                    {{transaction.customerAddress}}
+                </div>
+                <div class="col col-6" data-label="customerType">
+                    {{transaction.customerType}}
+                </div>
+                <div class="col col-7" data-label="amount">
+                    {{transaction.amount}}
+                </div>
+                <div class="col col-8" data-label="commAmount">
+                    {{transaction.commAmount}}
+                </div>
+                <div class="col col-9" data-label="netAmount">
+                    {{transaction.netAmount}}
+                </div>
+                <div class="col col-10" data-label="district">
+                    {{transaction.district}}
+                </div>
+                <div class="col col-11" data-label="channel">
+                    {{transaction.channel}}
+                </div>
+                <div class="col col-12" data-label="date">
+                    {{transaction.date}}
+                </div>
+                <div class="col col-13" data-label="Kilowatts">
+                    {{transaction.kilowatts}}
+                </div>
+                <div class="col col-14" data-label="vat">
+                    {{transaction.vat}}
+                </div>
+                <div class="col col-15" data-label="token">
+                    {{transaction.token}}
+                </div>
+            </li>
+        </ul>
+    </div>
+</div>

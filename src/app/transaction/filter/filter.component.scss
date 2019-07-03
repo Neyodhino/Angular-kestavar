@@ -1,0 +1,102 @@
+@import '../../../styles/abstracts/variables';
+@import '../../../styles/components/button';
+
+.filter{
+    width: 98%;
+    margin: 0 auto;
+    height: 170px;
+    background-color: $white;
+    box-shadow: 3px 0 7px -4px #ccc;
+    border-radius: 7px;
+    padding: 20px;
+        &__heading{
+        font-weight: 700;
+        font-size: 1.3rem;
+        color: $mainColor;
+    }
+} 
+
+
+.form{
+    margin-top: 30px;
+    display: flex;
+    justify-content: space-evenly;
+
+    label{
+        font-size: 1.4rem;
+        font-weight: bolder;
+        display: block;
+    }
+    &__group--input{
+        margin-top: 10px;
+        input{
+            width: 14em;
+            height: 4em;
+            line-height: 3;
+            background: $white;
+            overflow: hidden;
+            border-radius: .25em;
+            box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
+            border: 1px solid #d4d4d4;
+            font-size: 1.3rem;
+            font-family: inherit;
+            &:focus{
+                outline: none;
+            }
+        }
+    }
+    button{
+        padding: 15px 55px;
+        height: 30%;
+        //justify-items: center;
+        align-items: center;
+        border: none;
+        font-size: 1.75rem;
+        font-family: inherit;
+        background-image: linear-gradient(to right, $mainColor, $secondaryColor);
+        color: $white;
+        border-radius: 3px  ;
+        cursor: pointer;
+}
+}
+.form__group{
+    margin-top: 10px;
+    position: relative;
+    display: flex;
+    width: 20em;
+    height: 5em;
+    line-height: 3;
+    overflow: hidden;
+    border-radius: .25em;
+    box-shadow: 0 15px 30px -10px transparentize(#000, 0.9);
+    border: 1px solid #d4d4d4;
+}
+.select{
+    -webkit-appearance: none;
+    -moz-appearance: none;
+    -ms-appearance: none;
+    appearance: none;
+    outline: 0;
+    box-shadow: none;
+    border: 0 !important;
+    background: $white; 
+    flex: 1;
+    padding: 0 .5em;
+    color: black;
+    cursor: pointer;
+    font-family: inherit;
+    font-size: 1.7rem;
+    border: 5px solid red;
+}
+  .form__group::after {
+    content: '\25BC';
+    position: absolute;
+    color: black;
+    top: 0;
+    right: 0;
+    padding: 0 1em;
+    cursor: pointer;
+    pointer-events: none;
+    transition: .25s all ease;
+    font-size: 1.83rem;
+}
