@@ -2,9 +2,9 @@
 @import '../../styles/components/button';
 
 .container{
-    width: 100% !important;
-    height: 100% !important;
-    background-color: $mainColor !important;
+    width: 100vw;
+    height: 30vh;
+    background-color: $mainColor;
 }
 .login{
     position: absolute;

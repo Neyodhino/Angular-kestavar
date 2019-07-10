@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
-import { faSignInAlt } from "@fortawesome/free-solid-svg-icons";
-import { FormControl, FormGroup, Validators } from "@angular/forms";
+import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
+import { FormControl, FormGroup, Validators } from '@angular/forms';
+import { AuthService } from '../services/auth/auth.service';
 
 @Component({
   selector: 'app-login',
@@ -12,16 +13,21 @@ export class LoginComponent implements OnInit {
   loginIcon = faSignInAlt;
 
   form = new FormGroup({
-    username: new FormControl(''),
+    email: new FormControl(''),
     password: new FormControl('')
   });
 
-  constructor() { }
+  constructor(
+    private auth: AuthService
+  ) { }
 
   ngOnInit() {
   }
 
-onSubmit():void{
-  console.log(this.form.value)
+onSubmit(): void {
+  this.auth.userAuthentication(this.form.value).subscribe(
+    result => console.log(result),
+    error => console.log(error)
+  );
 }
 }

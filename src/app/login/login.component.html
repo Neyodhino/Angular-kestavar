@@ -1,4 +1,4 @@
-<section class="container">
+<div class="container">
     <div class="login">
         <div class="login__side1">
             <div class="login__brand">
@@ -14,8 +14,8 @@
                 <h2>login</h2>
                 <form class="form" [formGroup]="form" (ngSubmit)="onSubmit()">
                   <div class="form__group">
-                    <input type="text" class="form__input" placeholder="Username" name="username" required  formControlName="username"/>
-                    <label for="username" class="form__label">Username</label>
+                    <input type="email" class="form__input" placeholder="email" name="email" required  formControlName="email"/>
+                    <label for="email" class="form__label">Email</label>
                   </div>
 
                   <div class="form__group">
@@ -27,4 +27,4 @@
             </div>
         </div>
     </div>
-</section>
+</div>
