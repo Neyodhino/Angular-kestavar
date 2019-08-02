@@ -1,49 +1,41 @@
-import { TransactionService } from './services/transaction/transaction.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { FontAwesomeModule } from '@fortawesome/angular-fontawesome';
-import { ToastrModule } from 'ngx-toastr';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-import { HttpClientModule } from "@angular/common/http";
-
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+import { JwtInterceptor } from './services/httpInteceptors/jwt.interceptor';
 import { AppRoutingModule } from './app-routing.module';
+import { SharedModule } from './shared/shared.module';
+
+//All component declaration.........
 import { AppComponent } from './app.component';
-import { CardComponent } from './sharedUI/card/card.component';
-import { TransactionComponent } from './transaction/transaction.component';
-import { FilterComponent } from './transaction/filter/filter.component';
-import { DistrictComponent } from './transaction/district/district.component';
-import { DataTableComponent } from './transaction/data-table/data-table.component';
-import { SidebarComponent } from './sharedUI/sidebar/sidebar.component';
 import { FooterComponent } from './sharedUI/footer/footer.component';
 import { LoginComponent } from './login/login.component';
-import { DashboardComponent } from './dashboard/dashboard.component';
+import { DashboardModule } from './dashboard/dashboard.module';
+
 
 @NgModule({
   declarations: [
     AppComponent,
-    CardComponent,
-    TransactionComponent,
-    FilterComponent,
-    DistrictComponent,
-    DataTableComponent,
-    SidebarComponent,
     FooterComponent,
     LoginComponent,
-    DashboardComponent,
   ],
   imports: [
     BrowserModule,
     HttpClientModule,
     AppRoutingModule,
-    FontAwesomeModule,
-    ToastrModule.forRoot(),
     BrowserAnimationsModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    SharedModule,
+    DashboardModule
   ],
   providers: [
-    // TransactionService
+    {
+      provide: HTTP_INTERCEPTORS,
+      useClass: JwtInterceptor,
+      multi: true
+    }
   ],
   bootstrap: [AppComponent]
 })

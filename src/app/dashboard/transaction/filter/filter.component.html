@@ -5,17 +5,19 @@
         class="form"
     >
         <div>
-            <label for="provider">Provider</label>
+            <label for="provider">Status</label>
             <div class="form__group">
                 <select
-                    name="provider"
+                    name="status"
                     class="select"
                 >
-                    <option value="provider">provider</option>
-                    <option value="provider">provider</option>
-                    <option value="provider">provider</option>
+                    <option value="all">All</option>
+                    <option value="successful">Success</option>
+                    <option value="failed">Failed</option>
+                    <option value="pending">Pending</option>
                 </select>
             </div>
+
         </div>
         <div>
             <label for="district">District</label>
@@ -24,9 +26,18 @@
                     class="select"
                     name="district"
                 >
-                    <option value="district">district</option>
-                    <option value="district">district</option>
-                    <option value="district">district</option>
+                    <option value="all">All</option>
+                    <option value="mushin">Mushin</option>
+                    <option value="apapa">Apapa</option>
+                    <option value="ibeju">Ibeju</option>
+                    <option value="lekki">Lekki</option>
+                    <option value="agbara">Agbara</option>
+                    <option value="orile">Orile</option>
+                    <option value="festac">Festac</option>
+                    <option value="ijora">Ijora</option>
+                    <option value="Ojo">Ojo</option>
+                    <option value="island">Island</option>
+
                 </select>
             </div>
         </div>
@@ -38,9 +49,9 @@
                     id="accountType"
                     class="select"
                 >
-                    <option value="accountType">Account Type</option>
-                    <option value="accountType">Account Type</option>
-                    <option value="accountType">Account Type</option>
+                    <option value="all">All</option>
+                    <option value="prepaid">prepaid</option>
+                    <option value="postpaid">postpaid</option>
                 </select>
             </div>
         </div>
@@ -51,6 +62,7 @@
                 <input
                     type="text"
                     name="startDate"
+                    placeholder="15/7/2019"
                 >
             </div>
         </div>
@@ -61,6 +73,7 @@
                 <input
                     type="text"
                     name="endDate"
+                    placeholder="15/7/2019"
                 >
             </div>
         </div>

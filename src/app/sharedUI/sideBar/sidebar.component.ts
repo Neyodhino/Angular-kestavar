@@ -10,9 +10,10 @@ export class SidebarComponent implements OnInit {
   dashboardIcon = faTachometerAlt
   chartIcon = faChartLine
   transactionIcon = faCreditCard
-  
+
   constructor() { }
 
   ngOnInit() {
   }
+  
 }

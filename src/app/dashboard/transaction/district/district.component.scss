@@ -1,4 +1,4 @@
-@import '../../../styles/abstracts/variables';
+@import '../../../../styles/abstracts/variables';
 
 .district{
     width: 98%;
@@ -48,21 +48,21 @@
     .col-4 {
       flex-basis: 30%;
     }
-    
+
     @media all and (max-width: 767px) {
       .table-header {
         display: none;
       }
       .table-row{
-        
+
       }
       li {
         display: block;
       }
       .col {
-        
+
         flex-basis: 100%;
-        
+
       }
       .col {
         display: flex;

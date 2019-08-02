@@ -1,9 +1,16 @@
 import { Injectable } from '@angular/core';
-import { HttpClient, HttpErrorResponse } from '@angular/common/http';
+import { HttpClient, HttpErrorResponse, HttpHeaders } from '@angular/common/http';
 import { tap, catchError } from "rxjs/operators";
 import { throwError, Observable } from "rxjs";
+import { Router } from "@angular/router";
 
 const BASE_URL = 'https://api-dev.payments-platform.kestavarltd.com/';
+// const httpOptions = {
+//   header: new HttpHeaders({
+//     '*': 'Access-Control-Allow-Origin',
+//     'content-Type': 'Access-Control-Allow-Header'
+//   })
+// };
 
 @Injectable({
   providedIn: 'root'
@@ -11,15 +18,24 @@ const BASE_URL = 'https://api-dev.payments-platform.kestavarltd.com/';
 export class AuthService {
 
   constructor(
-    private httpClient: HttpClient
+    private httpClient: HttpClient,
+    private router: Router
   ) { }
 
-  public userAuthentication(value: any): Observable<any> {
-    console.log(value);
+
+  public userLogin(value: any): Observable<any> {
     return this.httpClient.post(`${BASE_URL}login`, value).pipe(
-      tap(data => console.log('All: ' + JSON.stringify(data))),
+      tap(data => localStorage.setItem('Token', data['Token'])),
       catchError(this.handleError)
       );
+  }
+
+  public userLogout() {
+    localStorage.removeItem('token');
+  }
+
+  public isUserLogin(): boolean {
+    return localStorage.getItem('Token') !== null;
   }
 
   private handleError (err: HttpErrorResponse) {

@@ -1,5 +1,5 @@
-@import '../../../styles/abstracts/variables';
-@import '../../../styles/components/button';
+@import '../../../../styles/abstracts/variables';
+@import '../../../../styles/components/button';
 
 .filter{
     width: 98%;
@@ -14,7 +14,7 @@
         font-size: 1.3rem;
         color: $mainColor;
     }
-} 
+}
 
 
 .form{
@@ -30,8 +30,8 @@
     &__group--input{
         margin-top: 10px;
         input{
-            width: 14em;
-            height: 4em;
+            width: 12em;
+            height: 3em;
             line-height: 3;
             background: $white;
             overflow: hidden;
@@ -46,12 +46,13 @@
         }
     }
     button{
-        padding: 15px 55px;
+      margin-top: 15px;
+        padding: 13px 40px;
         height: 30%;
         //justify-items: center;
-        align-items: center;
+        // align-items: center;
         border: none;
-        font-size: 1.75rem;
+        font-size: 1.6rem;
         font-family: inherit;
         background-image: linear-gradient(to right, $mainColor, $secondaryColor);
         color: $white;
@@ -63,8 +64,8 @@
     margin-top: 10px;
     position: relative;
     display: flex;
-    width: 20em;
-    height: 5em;
+    width: 14em;
+    height: 4em;
     line-height: 3;
     overflow: hidden;
     border-radius: .25em;
@@ -79,7 +80,7 @@
     outline: 0;
     box-shadow: none;
     border: 0 !important;
-    background: $white; 
+    background: $white;
     flex: 1;
     padding: 0 .5em;
     color: black;
@@ -92,8 +93,8 @@
     content: '\25BC';
     position: absolute;
     color: black;
-    top: 0;
-    right: 0;
+    top: -7px;
+    right: -9px;
     padding: 0 1em;
     cursor: pointer;
     pointer-events: none;

@@ -14,4 +14,8 @@ export class FilterComponent implements OnInit {
   ngOnInit() {
   }
 
+   buttonClicked() {
+    console.log('you clicked me');
+  }
+
 }

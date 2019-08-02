@@ -11,9 +11,15 @@
     top: 50%;
     left: 50%;
     transform:translate(-50%, -50%);
-    width: 50%;
+    width: 55%;
     background-color: $white;
     display: flex;
+
+    &__logo{
+      margin-top: 14px;
+      width: 70%;
+    }
+
     &__side1{
         width: 50%;
         background-color: $lightGray;
@@ -44,6 +50,7 @@
             line-height: 3rem;
         }
         img{
+          margin-top: -50px;
             width: 100%;
         }
     }
@@ -61,7 +68,7 @@
         border-radius: 2px;    ;
         background-color: rgba($white, .5);
         border: none;
-        border-bottom: 3px solid transparent;
+        // border-bottom: 3px solid transparent;
         display: block;
         width: 100%;
         border: 1px solid #000000;

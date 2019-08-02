@@ -2,7 +2,10 @@
     <div class="login">
         <div class="login__side1">
             <div class="login__brand">
-                <h2>kestavar</h2>
+                <!-- <h2>kestavar</!--> 
+                  <div class="login__logo">
+                    <img src="../../assets/images/kestavar-logo.png" alt="kestavar__logo">
+                  </div>
                 <p class="login__brand--content">
                     At Kestavar, our business is to help organizations, managers, executives and other business drivers make fact-based decisions and transform their businesses to achieve their goals.
                 </p>
@@ -22,9 +25,15 @@
                       <input type="password" class="form__input" placeholder="Password" name="password" required formControlName="password"/>
                       <label for="password" class="form__label">Password</label>
                   </div>
+                  <ng-container *ngIf='!buttonClicked; then thenTemplate; else elseTemplate'></ng-container>
+                  <ng-template #thenTemplate>
                     <button class="button">Log in<fa-icon [icon]="loginIcon"></fa-icon></button>
+                  </ng-template>
                 </form>
             </div>
         </div>
     </div>
 </div>
+<ng-template #elseTemplate>
+  <app-spinner></app-spinner>
+</ng-template>

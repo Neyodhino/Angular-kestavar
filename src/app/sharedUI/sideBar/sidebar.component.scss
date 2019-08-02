@@ -2,10 +2,9 @@
 
 .sidebar{
   height: 100vh;
-  width: 300px;
   background-color: $white;
   box-shadow: 3px 0 7px -4px #ccc;
-  width: 300px;
+  width: 250px;
 
   &__content{
     width: 80%;
@@ -30,7 +29,7 @@
       }
     }
   }
-  
+
   &__heading{
     font-size: 1.9rem;
   }

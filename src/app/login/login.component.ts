@@ -2,6 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { faSignInAlt } from '@fortawesome/free-solid-svg-icons';
 import { FormControl, FormGroup, Validators } from '@angular/forms';
 import { AuthService } from '../services/auth/auth.service';
+import { Router } from "@angular/router";
+import { ToastrService } from "ngx-toastr";
 
 @Component({
   selector: 'app-login',
@@ -11,6 +13,7 @@ import { AuthService } from '../services/auth/auth.service';
 export class LoginComponent implements OnInit {
 
   loginIcon = faSignInAlt;
+  buttonClicked = false;
 
   form = new FormGroup({
     email: new FormControl(''),
@@ -18,16 +21,24 @@ export class LoginComponent implements OnInit {
   });
 
   constructor(
-    private auth: AuthService
+    private auth: AuthService,
+    private router: Router,
+    private notification: ToastrService
   ) { }
 
   ngOnInit() {
   }
 
 onSubmit(): void {
-  this.auth.userAuthentication(this.form.value).subscribe(
-    result => console.log(result),
-    error => console.log(error)
-  );
+  this.buttonClicked = true;
+  this.auth.userLogin(this.form.value).subscribe(result => {
+    this.router.navigate(['/dashboard']);
+    this.notification.success('Logged in successfully', 'Kestavar Notification');
+  },
+  error => {
+    this.notification.error('An error occured, please try again', 'Kestavar Notification')
+    this.buttonClicked = false;
+  });
 }
+
 }

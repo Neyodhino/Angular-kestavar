@@ -1,4 +1,5 @@
 import { Component, OnInit } from '@angular/core';
+import { TransactionService } from '../services/transaction/transaction.service';
 
 @Component({
   selector: 'app-dashboard',
@@ -9,7 +10,7 @@ export class DashboardComponent implements OnInit {
 
   constructor() { }
 
-  ngOnInit() {
-  }
+  ngOnInit() { }
 
 }
+
